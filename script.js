@@ -42,3 +42,33 @@ if (menuToggle && navLinks) {
     }
   });
 }
+
+const languageButtons = document.querySelectorAll(".language-button");
+
+function setLanguage(language) {
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-en][data-id]").forEach((element) => {
+    element.textContent = element.dataset[language];
+  });
+
+  languageButtons.forEach((button) => {
+    const active = button.dataset.lang === language;
+
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+
+  document.title =
+    language === "id"
+      ? "Al Idrus H. | Profesional Produk & Proyek HealthTech"
+      : "Al Idrus H. | HealthTech Product & Project Professional";
+}
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setLanguage(button.dataset.lang);
+  });
+});
+
+setLanguage("en");

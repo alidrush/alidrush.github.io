@@ -923,3 +923,39 @@ img {
     animation-duration: 0.01ms !important;
   }
 }
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  color: #a0a8b8;
+  font-size: 0.82rem;
+}
+
+.language-button {
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #647086;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.language-button.is-active {
+  background: #edf0ff;
+  color: #3858d6;
+}
+
+.language-button:focus-visible {
+  outline: 2px solid #3858d6;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .language-switch {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+}

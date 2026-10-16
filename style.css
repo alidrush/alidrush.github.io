@@ -959,3 +959,137 @@ img {
     margin-right: 10px;
   }
 }
+
+
+.phr-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.phr-avatar {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 50%;
+  background: #dce4ff;
+  color: #3858d6;
+  font-weight: 800;
+}
+
+.phr-profile-lines {
+  display: grid;
+  flex: 1;
+  gap: 7px;
+}
+
+.phr-profile-lines span {
+  height: 6px;
+  border-radius: 8px;
+  background: #d9dfef;
+}
+
+.phr-profile-lines span:last-child {
+  width: 65%;
+}
+
+.queue-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+}
+
+.queue-ticket {
+  display: flex;
+  width: 180px;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #214d49;
+  box-shadow: 0 15px 35px rgba(30, 70, 60, 0.1);
+}
+
+.queue-ticket small {
+  font-size: 0.58rem;
+  letter-spacing: 1px;
+}
+
+.queue-ticket strong {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.queue-ticket > span {
+  font-size: 0.7rem;
+}
+
+.queue-integration {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #214d49;
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.queue-integration i {
+  width: 25px;
+  height: 2px;
+  background: #387c70;
+}
+
+.banking-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.banking-node {
+  display: flex;
+  width: 85px;
+  min-height: 85px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #51402f;
+}
+
+.banking-node > span {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.banking-node small {
+  font-size: 0.65rem;
+}
+
+.banking-connector {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.banking-connector span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #a8794e;
+}
+
+.banking-connector i {
+  width: 20px;
+  height: 2px;
+  background: #a8794e;
+}

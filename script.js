@@ -3,10 +3,41 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const navItems = document.querySelectorAll(".nav-links a");
 const yearElement = document.querySelector("#current-year");
+const languageButtons = document.querySelectorAll(".language-button");
 
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+
+function setLanguage(language) {
+  if (!["en", "id"].includes(language)) {
+    language = "en";
+  }
+
+  document.documentElement.lang = language;
+
+  document.querySelectorAll("[data-en][data-id]").forEach((element) => {
+    element.textContent = element.getAttribute(`data-${language}`);
+  });
+
+  languageButtons.forEach((button) => {
+    const isActive = button.dataset.lang === language;
+
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+
+  document.title =
+    language === "id"
+      ? "Al Idrus H. | Profesional Produk & Proyek HealthTech"
+      : "Al Idrus H. | HealthTech Product & Project Professional";
+}
+
+languageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setLanguage(button.dataset.lang);
+  });
+});
 
 if (menuToggle && navLinks) {
   function closeMenu() {
@@ -32,7 +63,6 @@ if (menuToggle && navLinks) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeMenu();
-      menuToggle.focus();
     }
   });
 
@@ -42,33 +72,5 @@ if (menuToggle && navLinks) {
     }
   });
 }
-
-const languageButtons = document.querySelectorAll(".language-button");
-
-function setLanguage(language) {
-  document.documentElement.lang = language;
-
-  document.querySelectorAll("[data-en][data-id]").forEach((element) => {
-    element.textContent = element.dataset[language];
-  });
-
-  languageButtons.forEach((button) => {
-    const active = button.dataset.lang === language;
-
-    button.classList.toggle("is-active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-
-  document.title =
-    language === "id"
-      ? "Al Idrus H. | Profesional Produk & Proyek HealthTech"
-      : "Al Idrus H. | HealthTech Product & Project Professional";
-}
-
-languageButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setLanguage(button.dataset.lang);
-  });
-});
 
 setLanguage("en");

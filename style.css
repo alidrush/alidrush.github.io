@@ -1093,3 +1093,161 @@ img {
   height: 2px;
   background: #a8794e;
 }
+
+/* Key Achievements */
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.achievement-card:hover,
+.speaking-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(23, 32, 51, 0.09);
+}
+
+.achievement-icon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 13px;
+  background: #edf0ff;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.achievement-type {
+  margin: 22px 0 8px;
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.achievement-card h3,
+.speaking-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.18rem;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  overflow-wrap: anywhere;
+}
+
+.achievement-card > p:not(.achievement-type),
+.speaking-card > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.91rem;
+}
+
+.achievement-year {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: #f0f2f8;
+  color: #59657c;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Speaking & Knowledge Sharing */
+
+.speaking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.speaking-card {
+  min-width: 0;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.speaking-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.speaking-number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 12px;
+  background: #edf0ff;
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.speaking-label {
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.speaking-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* Responsive layout */
+
+@media (max-width: 900px) {
+  .achievement-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .achievement-grid,
+  .speaking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-card,
+  .speaking-card {
+    padding: 24px;
+  }
+
+  .speaking-top {
+    align-items: flex-start;
+  }
+}

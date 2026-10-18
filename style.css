@@ -1298,3 +1298,35 @@ img {
   line-height: 1.7;
   overflow-wrap: anywhere;
 }
+
+/* Achievement tags */
+
+.achievement-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.achievement-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Keep achievement cards visually balanced */
+
+.achievement-card {
+  height: 100%;
+}
+
+.achievement-card > p:not(.achievement-type) {
+  line-height: 1.8;
+}

@@ -1330,3 +1330,14 @@ img {
 .achievement-card > p:not(.achievement-type) {
   line-height: 1.8;
 }
+.speaking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.speaking-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

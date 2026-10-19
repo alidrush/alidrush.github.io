@@ -1171,6 +1171,7 @@ img {
 
 
 /* Speaking & Knowledge Sharing */
+
 .speaking-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1186,20 +1187,17 @@ img {
     box-sizing: border-box;
 }
 
-/* Metadata sejajar di bagian bawah kartu */
 .speaking-meta {
     margin-top: auto;
     padding-top: 22px;
 }
 
-/* Tablet */
 @media (max-width: 900px) {
     .speaking-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* Mobile */
 @media (max-width: 640px) {
     .speaking-grid {
         grid-template-columns: 1fr;
